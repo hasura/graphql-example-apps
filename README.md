@@ -32,11 +32,11 @@
   ```
 
 ## What is the point?
-- A script will refresh all the databases every 30mins for all the example apps
-- This way you can safely share the Hasura GraphQL engine link with whoever and put it wherever you want
+- A script will refresh all the databases every 30mins for all the example apps (it will run the migrations in the migrations directory)
+- This way you can safely share the Hasura GraphQL engine link with whoever and put it wherever you want, like in your blogpost or on the Hasura website or in a forum or on quora
 
 ## Security
-Yes, this is totally insecure, but till we have a better way of storing DATABASE_URL configurations that can be 
+Yes, storing the `DATABASE_URL` totally insecure, but till we have a better way of storing DATABASE_URL configurations that can be 
 picked up by our script dynamically, deal with it.
 
 This repo is private for a reason.
