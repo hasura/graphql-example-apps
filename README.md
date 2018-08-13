@@ -22,7 +22,7 @@
   heroku access:add accounts@hasura.io --app <app-name>
   ```
 
-## Buildbot Workflow:
+## Buildbot Workflow (this will happen automatically every 30mins):
 
 1. Clone the examples-apps repo
 2. Reset postgresql database by running:
