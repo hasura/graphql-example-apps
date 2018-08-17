@@ -10,7 +10,7 @@
 3. cd into <app-name> and edit config.yaml to update the endpoint
 4. Run pg_dump to dump the required schemas
   ```bash
-  pg_dump -h host -d database -U user --attribute-inserts -n schema1,schema2 > migrations/1.up.sql
+  pg_dump -h host -d database -U user --attribute-inserts -n schema1,schema2 > migrations/1_init.up.sql
   ```
 5. Export metadata by running:
   ```bash

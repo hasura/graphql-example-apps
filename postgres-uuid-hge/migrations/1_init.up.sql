@@ -83,9 +83,6 @@ ALTER TABLE ONLY public.id_graphql ALTER COLUMN id SET DEFAULT nextval('public.i
 --
 
 INSERT INTO public.uuid_graphql (uuid, name) VALUES ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11', 'first');
-INSERT INTO public.uuid_graphql (uuid, name) VALUES ('a0eaec99-9c0b-4ef8-bb6d-6bb9bd380a11', 'first');
-INSERT INTO public.uuid_graphql (uuid, name) VALUES ('12345678-abcd-abcd-abcd-12345678abcd', 'many');
-INSERT INTO public.uuid_graphql (uuid, name) VALUES ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a21', 'Inserted');
 
 
 --
