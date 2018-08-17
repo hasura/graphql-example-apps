@@ -1,0 +1,20 @@
+# Insert UUID
+
+mutation {
+  insert_uuid_graphql(objects: [{uuid: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a21", name: "Inserted"}]) {
+    returning {
+      uuid
+      name
+    }
+  }
+}
+
+# Query UUID
+
+{
+  uuid_graphql(where: {uuid: {_eq: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11"}}) {
+    uuid
+    name
+  }
+}
+
