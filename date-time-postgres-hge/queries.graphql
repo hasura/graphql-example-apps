@@ -1,0 +1,46 @@
+
+# A simple select query
+
+{
+  datetime_graphql(where: {created: {_eq: "2018-08-12T08:56:37.331336+00:00"}}) {
+    id
+    created
+    edited
+  }
+}
+
+# Inserting into a Timestamptz field
+
+mutation {
+  insert_datetime_graphql(objects: [{ edited: "2018-08-12T08:56:37.331336+00:00"}]) {
+    returning {
+      id
+      created
+      edited
+    }
+  }
+}
+
+# Inserting just the date
+
+mutation {
+  insert_datetime_graphql(objects: [{edited: "2018-08-12"}]) {
+    returning {
+      id
+      created
+      edited
+    }
+  }
+}
+
+# Or the timestamp without the timezone
+
+mutation {
+  insert_datetime_graphql(objects: [{ edited: "2018-08-12T08:56:37.331336"}]) {
+    returning {
+      id
+      created
+      edited
+    }
+  }
+}
