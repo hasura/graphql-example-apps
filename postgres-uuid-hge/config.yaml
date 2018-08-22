@@ -1,1 +1,2 @@
 endpoint: https://postgres-uuid-hge.herokuapp.com
+subdomain: postgres-uuid-hge
