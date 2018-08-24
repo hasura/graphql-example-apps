@@ -28,7 +28,7 @@ CREATE TABLE message (
     id integer NOT NULL,
     text text NOT NULL,
     username text NOT NULL,
-    "timestamp" timestamp with time zone NOT NULL
+    "timestamp" timestamp with time zone DEFAULT now() NOT NULL
 );
 
 
