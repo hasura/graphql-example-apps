@@ -1,9 +1,0 @@
-query_templates: []
-tables:
-- array_relationships: []
-  delete_permissions: []
-  insert_permissions: []
-  object_relationships: []
-  select_permissions: []
-  table: message
-  update_permissions: []
