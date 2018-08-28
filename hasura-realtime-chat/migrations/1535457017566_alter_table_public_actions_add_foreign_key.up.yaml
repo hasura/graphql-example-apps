@@ -1,4 +1,0 @@
-- args:
-    sql: ALTER TABLE public."actions" ADD FOREIGN KEY ("user_id") REFERENCES public."user"
-      ("id")
-  type: run_sql
