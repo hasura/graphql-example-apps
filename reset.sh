@@ -6,10 +6,10 @@ for D in `find * -maxdepth 0 -type d`
 do
   echo "Resetting app ${D}"
   ( cd $D \
-    && heroku pg:reset --app $D --confirm $D \
-    && heroku restart --app $D \
     && sed -e 's/:[^:\/\/]/="/g;s/$/"/g;s/ *=/=/g' config.yaml > ../domain.sh && source ../domain.sh \
     && version=$(curl -H "Accept: application/json" -H "Content-Type: application/json" "${endpoint}/v1/version" | jq -r '.version') \
+    && heroku pg:reset --app $D --confirm $D \
+    && heroku restart --app $D \
     && curl -Lo /tmp/cli-hasura-linux-amd64-${version} https://github.com/hasura/graphql-engine/releases/download/${version}/cli-hasura-linux-amd64 \
     && chmod a+x /tmp/cli-hasura-linux-amd64-${version} \
     && /tmp/cli-hasura-linux-amd64-${version} migrate apply \
