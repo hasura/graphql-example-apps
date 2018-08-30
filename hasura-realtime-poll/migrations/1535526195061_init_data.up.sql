@@ -19,7 +19,7 @@ SET row_security = off;
 -- Data for Name: poll; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO public.poll (id, created_at, created_by, question) VALUES ('98277113-a7a2-428c-9c8b-0fe7a91bf42c', '2018-08-16 12:35:44.202376+00', NULL, 'Who''ll win the Men''s Singles Championship at US Open 2018?');
+INSERT INTO public.poll (id, created_at, created_by, question) VALUES ('98277113-a7a2-428c-9c8b-0fe7a91bf42c', '2018-08-16 12:35:44.202376+00', NULL, 'Who''ll win the Men''s Singles Championship at US Open Tennis 2018?');
 
 
 --
