@@ -1,0 +1,76 @@
+# Get the Poll question and options:
+query getPolls {
+  poll {
+    id
+    question
+    options (order_by: id_desc){
+      id
+      text
+    }
+  }
+}
+
+# Create a new user:
+mutation newUser($uuid: uuid) {
+  insert_user (
+    objects:[{
+      id: $uuid
+    }]
+  ) {
+    returning {
+      id
+      created_at
+    }
+  }
+}
+
+# Cast a vote:
+mutation vote($optionId: uuid!, $userId: uuid!) {
+  insert_vote(objects:[{
+    option_id: $optionId,
+    created_by_user_id: $userId
+  }]) {
+    returning {
+      id
+    }
+  }
+}
+
+# Mark user online:
+mutation userOnline($uuid: uuid) {
+  update_user(
+    where: {id: {_eq: $uuid}},
+    _set : {
+      online_ping: true
+    }
+  ) {
+    affected_rows
+    returning {
+      last_seen_at
+    }
+  }
+}
+
+# Get live results
+subscription getResult($pollId: uuid!) {
+  poll_results (
+    order_by: option_id_desc,
+    where: {
+      poll_id: {_eq: $pollId}
+    }
+  ) {
+    option_id
+    option {
+      id
+      text
+    }
+    votes
+  }
+}
+
+# Get live number of users:
+subscription getOnlineUsersCount {
+  online_users {
+    count
+  }
+}
