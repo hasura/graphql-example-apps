@@ -1,0 +1,13 @@
+- args:
+    sql: CREATE EXTENSION IF NOT EXISTS pgcrypto;
+  type: run_sql
+- args:
+    sql: CREATE TABLE public."image"("id" uuid NOT NULL DEFAULT gen_random_uuid(),
+      "image_uri" text NOT NULL, "converted_image_uri" text , "timestamp" timestamptz
+      NOT NULL DEFAULT now(), PRIMARY KEY ("id") ); COMMENT ON TABLE public."image"
+      IS 'This table stores the image details'
+  type: run_sql
+- args:
+    name: image
+    schema: public
+  type: add_existing_table_or_view
