@@ -1,0 +1,13 @@
+- args:
+    insert:
+      columns:
+      - image_uri
+      - converted_image_uri
+      - id
+      - timestamp
+    name: insert_image
+    table:
+      name: image
+      schema: public
+    webhook: https://us-central1-hasura-test.cloudfunctions.net/function
+  type: create_event_trigger
