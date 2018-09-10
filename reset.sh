@@ -20,5 +20,5 @@ do
     && heroku domains:add ${subdomain}.hasura.app --app $D || true \
     && cname=$(heroku domains --app ${D} --json | jq --arg v "$subdomain.hasura.app" -c '.[] | select( .hostname | contains($v))' | jq -r '.cname') \
     && cli4 --post type="CNAME" proxied=true name="${subdomain}" content="${cname}" /zones/:hasura.app/dns_records || true \
-    && cli4 --patch proxied=true type="CNAME" name="${subdomain}" content="${cname}" /zones/:hasura.app/dns_records/:${subdomain}.hasura.app)
+    && cli4 --patch proxied=true type="CNAME" name="${subdomain}" content="${cname}" /zones/:hasura.app/dns_records/:${subdomain}.hasura.app ) || true
 done
