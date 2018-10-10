@@ -2,6 +2,19 @@ query_templates: []
 tables:
 - array_relationships: []
   delete_permissions: []
+  event_triggers:
+  - definition:
+      insert:
+        columns:
+        - image_uri
+        - converted_image_uri
+        - id
+        - timestamp
+    name: insert_image
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+    webhook: https://us-central1-hasura-test.cloudfunctions.net/function
   insert_permissions: []
   object_relationships: []
   select_permissions: []
